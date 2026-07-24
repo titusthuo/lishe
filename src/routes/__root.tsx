@@ -1,8 +1,7 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
-  createRootRouteWithContext,
+  createRootRoute,
   useRouter,
   HeadContent,
   Scripts,
@@ -14,17 +13,24 @@ import { SiteShell } from "../components/site/Shell";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-[60vh] items-center justify-center px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+        <p className="num font-display text-7xl font-extrabold text-leaf">404</p>
+        <h1 className="mt-4 font-display text-2xl font-bold">Page not found</h1>
+        <p className="mt-2 text-sm text-muted">
+          That page doesn't exist or has moved. Try the nutrition basics, or ask the helper a
+          question.
         </p>
-        <div className="mt-6">
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <Link
+            to="/learn"
+            className="rounded bg-leaf px-5 py-2.5 text-sm font-semibold text-surface transition-colors hover:bg-ink"
+          >
+            Learn the basics
+          </Link>
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="rounded border border-hairline bg-surface px-5 py-2.5 text-sm font-semibold transition-colors hover:border-ink"
           >
             Go home
           </Link>
@@ -39,27 +45,25 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   const router = useRouter();
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-[60vh] items-center justify-center px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+        <h1 className="font-display text-2xl font-bold">This page didn't load</h1>
+        <p className="mt-2 text-sm text-muted">
+          Something went wrong on our end. You can try again or head back home.
         </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
           <button
             onClick={() => {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="rounded bg-leaf px-5 py-2.5 text-sm font-semibold text-surface transition-colors hover:bg-ink"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="rounded border border-hairline bg-surface px-5 py-2.5 text-sm font-semibold transition-colors hover:border-ink"
           >
             Go home
           </a>
@@ -69,17 +73,18 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lishe — Eat well on the money you actually have" },
-      { name: "description", content: "Enter your budget in KSh and get real Kenyan meals that fit and are nutritionally balanced." },
-      { property: "og:title", content: "Lishe — Eat well on the money you actually have" },
-      { property: "og:description", content: "Real Kenyan food, real prices, balanced meals from KSh 50." },
+      { title: "Lishe — Eat a balanced diet on a Kenyan budget" },
+      { name: "description", content: "Learn what a balanced plate looks like with local Kenyan foods, look up nutrients from the Kenya Food Composition Tables 2018, and ask a nutrition helper your questions." },
+      { property: "og:title", content: "Lishe — Eat a balanced diet on a Kenyan budget" },
+      { property: "og:description", content: "Nutrition education and a friendly helper, built around the food Kenyans actually eat. General nutrition information, not medical advice." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:site_name", content: "Lishe" },
+      { name: "twitter:card", content: "summary" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -110,13 +115,9 @@ function RootShell({ children }: { children: ReactNode }) {
 }
 
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <SiteShell>
-        <Outlet />
-      </SiteShell>
-    </QueryClientProvider>
+    <SiteShell>
+      <Outlet />
+    </SiteShell>
   );
 }

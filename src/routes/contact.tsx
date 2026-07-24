@@ -21,20 +21,12 @@ function Contact() {
         to hear from you.
       </p>
 
-      <div className="mt-10 space-y-4 text-ink">
-        <p>
-          General:{" "}
-          <a className="text-leaf underline" href="mailto:mwangititus6634@gmail.com">
-            mwangititus6634@gmail.com
-          </a>
-        </p>
-        <p>
-          Data corrections & partnerships:{" "}
-          <a className="text-leaf underline" href="mailto:mwangititus6634@gmail.com">
-            mwangititus6634@gmail.com
-          </a>
-        </p>
-      </div>
+      <p className="mt-10 text-ink">
+        Email:{" "}
+        <a className="text-leaf underline" href="mailto:mwangititus6634@gmail.com">
+          mwangititus6634@gmail.com
+        </a>
+      </p>
 
       <p className="mt-10 text-sm text-muted">
         For a medical concern, pregnancy, or a sick child, please see a doctor or a

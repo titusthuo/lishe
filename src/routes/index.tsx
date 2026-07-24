@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { KFCT_FOODS } from "@/data/foodsKfct";
+import { KFCT_FOOD_COUNT } from "@/data/foodsMeta";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -82,7 +82,7 @@ function Home() {
         <div className="mx-auto grid max-w-[1200px] gap-10 px-4 py-16 sm:px-6 md:grid-cols-3">
           {[
             { n: "76.3%", label: "of Kenyans cannot afford a healthy diet (FAO SOFI 2026)" },
-            { n: `${KFCT_FOODS.length}`, label: "local foods with nutrition data from the Kenya Food Composition Tables 2018" },
+            { n: `${KFCT_FOOD_COUNT}`, label: "local foods with nutrition data from the Kenya Food Composition Tables 2018" },
             { n: "0", label: "accounts required — nothing to sign up for" },
           ].map((s) => (
             <div key={s.label}>

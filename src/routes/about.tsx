@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { KFCT_FOODS } from "@/data/foodsKfct";
+import { KFCT_FOOD_COUNT } from "@/data/foodsMeta";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -108,7 +108,7 @@ function About() {
                 Foods
               </Link>
             </span>{" "}
-            — {KFCT_FOODS.length} foods from the Kenya Food Composition Tables 2018, searchable
+            — {KFCT_FOOD_COUNT} foods from the Kenya Food Composition Tables 2018, searchable
             by both English and common Kenyan names, with full nutrient values per 100 g.
           </li>
           <li>
