@@ -1,18 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lishe">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Lishe">
   <title>Lishe — a balanced plate</title>
-  <!-- Cream background disc -->
-  <circle cx="32" cy="32" r="30" fill="#FBFAF8"/>
-  <!-- ½ vegetables & fruit (left half, leaf green) -->
-  <path d="M32 2 A30 30 0 0 0 32 62 Z" fill="#2F5D3A"/>
-  <!-- ¼ staples (top-right quarter, enamel blue) -->
-  <path d="M32 2 A30 30 0 0 1 62 32 L32 32 Z" fill="#1F4E8C"/>
-  <!-- ¼ protein (bottom-right quarter, brick) -->
-  <path d="M62 32 A30 30 0 0 1 32 62 L32 32 Z" fill="#A63D2F"/>
-  <!-- Plate rim -->
-  <circle cx="32" cy="32" r="30" fill="none" stroke="#181815" stroke-width="3"/>
-  <!-- Dividers -->
-  <line x1="32" y1="2" x2="32" y2="62" stroke="#181815" stroke-width="2"/>
-  <line x1="32" y1="32" x2="62" y2="32" stroke="#181815" stroke-width="2"/>
-  <!-- Centre pip -->
-  <circle cx="32" cy="32" r="4" fill="#FBFAF8" stroke="#181815" stroke-width="2"/>
+  <!-- Matches PlateMark in src/components/site/Logo.tsx, scaled to fill the
+       canvas since a favicon has no surrounding whitespace to breathe into. -->
+  <circle cx="16" cy="16" r="15.1" fill="#FBFAF8" stroke="#181815" stroke-width="1.8"/>
+  <path d="M16 4.6 A11.4 11.4 0 0 0 16 27.4 Z" fill="#2F5D3A"/>
+  <path d="M16 4.6 A11.4 11.4 0 0 1 27.4 16 L16 16 Z" fill="#1F4E8C"/>
+  <path d="M27.4 16 A11.4 11.4 0 0 1 16 27.4 L16 16 Z" fill="#A63D2F"/>
+  <path d="M16 4.6 V27.4 M16 16 H27.4" stroke="#FBFAF8" stroke-width="1.8" stroke-linecap="round"/>
 </svg>

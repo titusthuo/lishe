@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 import { Menu, X } from "lucide-react";
+import { PlateMark } from "./Logo";
 
 const NAV_LINKS = [
   { to: "/learn", label: "Learn" },
@@ -17,8 +18,12 @@ export function SiteShell({ children }: { children: ReactNode }) {
     <div className="flex min-h-screen flex-col bg-bg text-ink">
       <header className="sticky top-0 z-30 h-16 border-b border-hairline bg-bg">
         <div className="mx-auto flex h-full max-w-[1200px] items-center gap-6 px-4 sm:px-6">
-          <Link to="/" className="font-display text-xl font-bold tracking-tight">
-            Lishe
+          <Link
+            to="/"
+            className="flex shrink-0 items-center gap-2.5 transition-opacity hover:opacity-80"
+          >
+            <PlateMark className="h-7 w-7 shrink-0 text-ink" />
+            <span className="font-display text-xl font-bold tracking-tight">Lishe</span>
           </Link>
           <nav className="hidden flex-1 items-center justify-center gap-8 md:flex">
             {links.map((l) => (
