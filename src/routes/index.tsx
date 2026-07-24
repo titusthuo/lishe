@@ -5,9 +5,17 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Lishe — Eat a balanced diet on a Kenyan budget" },
-      { name: "description", content: "Learn what a balanced plate looks like with local Kenyan foods, and ask a nutrition helper your questions. General nutrition information, not medical advice." },
+      {
+        name: "description",
+        content:
+          "Learn what a balanced plate looks like with local Kenyan foods, and ask a nutrition helper your questions. General nutrition information, not medical advice.",
+      },
       { property: "og:title", content: "Lishe — Eat a balanced diet on a Kenyan budget" },
-      { property: "og:description", content: "Learn what a balanced plate looks like with local Kenyan foods, and ask a nutrition helper your questions." },
+      {
+        property: "og:description",
+        content:
+          "Learn what a balanced plate looks like with local Kenyan foods, and ask a nutrition helper your questions.",
+      },
     ],
   }),
   component: Home,
@@ -31,8 +39,8 @@ function Home() {
               Eat a balanced diet on a Kenyan budget.
             </h1>
             <p className="mt-6 max-w-[520px] text-lg text-muted">
-              Learn what a balanced plate looks like with foods you can actually find — ugali, sukuma
-              wiki, terere, omena, ndengu — and ask a nutrition helper your questions.
+              Learn what a balanced plate looks like with foods you can actually find — ugali,
+              sukuma wiki, terere, omena, ndengu — and ask a nutrition helper your questions.
             </p>
             <div className="mt-8 flex items-center gap-6">
               <Link
@@ -41,7 +49,10 @@ function Home() {
               >
                 Learn the basics
               </Link>
-              <Link to="/ask" className="text-sm font-semibold underline underline-offset-4 hover:text-leaf">
+              <Link
+                to="/ask"
+                className="text-sm font-semibold underline underline-offset-4 hover:text-leaf"
+              >
                 Ask the helper
               </Link>
             </div>
@@ -82,7 +93,10 @@ function Home() {
         <div className="mx-auto grid max-w-[1200px] gap-10 px-4 py-16 sm:px-6 md:grid-cols-3">
           {[
             { n: "76.3%", label: "of Kenyans cannot afford a healthy diet (FAO SOFI 2026)" },
-            { n: `${KFCT_FOOD_COUNT}`, label: "local foods with nutrition data from the Kenya Food Composition Tables 2018" },
+            {
+              n: `${KFCT_FOOD_COUNT}`,
+              label: "local foods with nutrition data from the Kenya Food Composition Tables 2018",
+            },
             { n: "0", label: "accounts required — nothing to sign up for" },
           ].map((s) => (
             <div key={s.label}>
@@ -130,7 +144,9 @@ function Home() {
               <p className={`text-xs uppercase tracking-widest ${c.tone}`}>{c.tag}</p>
               <h2 className="mt-3 font-display text-2xl font-bold">{c.title}</h2>
               <p className="mt-4 flex-1 text-sm text-muted">{c.body}</p>
-              <span className="mt-6 text-sm font-semibold text-leaf group-hover:text-ink">{c.cta}</span>
+              <span className="mt-6 text-sm font-semibold text-leaf group-hover:text-ink">
+                {c.cta}
+              </span>
             </Link>
           ))}
         </div>
@@ -147,18 +163,15 @@ function Home() {
             {[
               {
                 title: "Kenyan food, not American",
-                body:
-                  "Ugali, githeri, sukuma wiki, terere, mrenda, ndengu, njahi, omena, matoke. Search by the name you know — the site finds the KFCT entry.",
+                body: "Ugali, githeri, sukuma wiki, terere, mrenda, ndengu, njahi, omena, matoke. Search by the name you know — the site finds the KFCT entry.",
               },
               {
                 title: "Real data, cited",
-                body:
-                  "Every nutrient number comes from the Kenya Food Composition Tables 2018 (FAO / Government of Kenya). Every article on Learn links to WHO, FAO, MoH or UNICEF.",
+                body: "Every nutrient number comes from the Kenya Food Composition Tables 2018 (FAO / Government of Kenya). Every article on Learn links to WHO, FAO, MoH or UNICEF.",
               },
               {
                 title: "No accounts, no ads",
-                body:
-                  "Nothing to sign up for. No tracking. Your Ask chat history is saved only in your browser — we never store it on our servers.",
+                body: "Nothing to sign up for. No tracking. Your Ask chat history is saved only in your browser — we never store it on our servers.",
               },
             ].map((c) => (
               <div key={c.title}>
@@ -175,12 +188,12 @@ function Home() {
         <div className="mx-auto max-w-[1200px] px-4 py-14 sm:px-6">
           <p className="text-xs uppercase tracking-widest text-muted">Where this comes from</p>
           <p className="mt-3 max-w-[680px] text-sm text-ink">
-            Kenya Food Composition Tables 2018 (FAO / Government of Kenya) · WHO healthy-diet guidance ·
-            Kenya Ministry of Health food-based dietary guidelines.
+            Kenya Food Composition Tables 2018 (FAO / Government of Kenya) · WHO healthy-diet
+            guidance · Kenya Ministry of Health food-based dietary guidelines.
           </p>
           <p className="mt-3 max-w-[680px] text-xs text-muted">
-            Lishe gives general nutrition information, not medical advice. For a condition, pregnancy,
-            or a sick child, see a doctor or a KNDI-registered nutritionist.
+            Lishe gives general nutrition information, not medical advice. For a condition,
+            pregnancy, or a sick child, see a doctor or a KNDI-registered nutritionist.
           </p>
         </div>
       </section>

@@ -17,8 +17,8 @@ function Contact() {
     <div className="mx-auto max-w-[720px] px-4 py-20 sm:px-6">
       <h1 className="font-display text-5xl font-extrabold tracking-tight">Contact</h1>
       <p className="mt-4 max-w-[560px] text-muted">
-        Questions, feedback, corrections to the nutrition data, or partnership ideas — we'd love
-        to hear from you.
+        Questions, feedback, corrections to the nutrition data, or partnership ideas — we'd love to
+        hear from you.
       </p>
 
       <p className="mt-10 text-ink">
@@ -29,8 +29,8 @@ function Contact() {
       </p>
 
       <p className="mt-10 text-sm text-muted">
-        For a medical concern, pregnancy, or a sick child, please see a doctor or a
-        KNDI-registered nutritionist rather than emailing us — we can't give clinical advice.
+        For a medical concern, pregnancy, or a sick child, please see a doctor or a KNDI-registered
+        nutritionist rather than emailing us — we can't give clinical advice.
       </p>
     </div>
   );

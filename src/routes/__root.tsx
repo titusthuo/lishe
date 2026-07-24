@@ -79,9 +79,17 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Lishe — Eat a balanced diet on a Kenyan budget" },
-      { name: "description", content: "Learn what a balanced plate looks like with local Kenyan foods, look up nutrients from the Kenya Food Composition Tables 2018, and ask a nutrition helper your questions." },
+      {
+        name: "description",
+        content:
+          "Learn what a balanced plate looks like with local Kenyan foods, look up nutrients from the Kenya Food Composition Tables 2018, and ask a nutrition helper your questions.",
+      },
       { property: "og:title", content: "Lishe — Eat a balanced diet on a Kenyan budget" },
-      { property: "og:description", content: "Nutrition education and a friendly helper, built around the food Kenyans actually eat. General nutrition information, not medical advice." },
+      {
+        property: "og:description",
+        content:
+          "Nutrition education and a friendly helper, built around the food Kenyans actually eat. General nutrition information, not medical advice.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Lishe" },
       { name: "twitter:card", content: "summary" },
@@ -91,7 +99,10 @@ export const Route = createRootRoute({
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,

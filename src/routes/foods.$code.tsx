@@ -69,8 +69,7 @@ function FoodDetail() {
       <h1 className="mt-2 font-display text-5xl font-extrabold tracking-tight">{f.name}</h1>
       {f.aliases.length > 0 && (
         <p className="mt-3 text-sm text-muted">
-          Also known as{" "}
-          <span className="text-ink">{f.aliases.join(", ")}</span>
+          Also known as <span className="text-ink">{f.aliases.join(", ")}</span>
         </p>
       )}
       <p className="mt-2 text-xs text-muted">KFCT 2018 · Food code {f.code}</p>
@@ -82,8 +81,8 @@ function FoodDetail() {
 
       <p className="mt-8 max-w-[720px] text-xs text-muted">
         A dash (—) means the Kenya Food Composition Tables 2018 do not publish a value for that
-        nutrient in this food — not that the food contains none of it. Values are for the raw
-        edible portion unless the food name says otherwise.
+        nutrient in this food — not that the food contains none of it. Values are for the raw edible
+        portion unless the food name says otherwise.
       </p>
 
       <div className="mt-10 border border-hairline bg-surface p-6">

@@ -39,8 +39,7 @@ const NOT_CONFIGURED =
   "The nutrition helper isn't configured yet — set GEMINI_API_KEY in your environment to enable it.";
 const RATE_LIMITED =
   "You've asked a lot of questions in a short time. Give it a minute and try again — the helper is free to use and shared with everyone.";
-const GENERIC_ERROR =
-  "Sorry — the helper couldn't answer just now. Please try again in a moment.";
+const GENERIC_ERROR = "Sorry — the helper couldn't answer just now. Please try again in a moment.";
 const BLOCKED =
   "I can't answer that one. Try a question about nutrition, balanced diet, or a specific food, and I'll help.";
 

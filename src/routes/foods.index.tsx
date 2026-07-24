@@ -89,8 +89,8 @@ function FoodsExplorer() {
       </h1>
       <p className="mt-3 max-w-[680px] text-muted">
         Nutrient values per 100 g for {KFCT_FOODS.length} local and prepared foods, taken directly
-        from the Kenya Food Composition Tables 2018 (FAO / Government of Kenya). Values are for
-        the raw edible portion unless the name says otherwise.
+        from the Kenya Food Composition Tables 2018 (FAO / Government of Kenya). Values are for the
+        raw edible portion unless the name says otherwise.
       </p>
 
       <div className="mt-6 flex flex-col gap-4">

@@ -78,19 +78,28 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <footer className="mt-24 border-t border-hairline bg-bg">
         <div className="mx-auto max-w-[1200px] px-4 py-14 sm:px-6">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            <FooterCol title="Nutrition" items={[
-              { to: "/learn", label: "Balanced diet" },
-              { to: "/ask", label: "Ask the helper" },
-              { to: "/foods", label: "Foods" },
-            ]} />
-            <FooterCol title="Company" items={[
-              { to: "/about", label: "About" },
-              { to: "/contact", label: "Contact" },
-            ]} />
-            <FooterCol title="Trust" items={[
-              { to: "/privacy", label: "Privacy" },
-              { to: "/terms", label: "Terms" },
-            ]} />
+            <FooterCol
+              title="Nutrition"
+              items={[
+                { to: "/learn", label: "Balanced diet" },
+                { to: "/ask", label: "Ask the helper" },
+                { to: "/foods", label: "Foods" },
+              ]}
+            />
+            <FooterCol
+              title="Company"
+              items={[
+                { to: "/about", label: "About" },
+                { to: "/contact", label: "Contact" },
+              ]}
+            />
+            <FooterCol
+              title="Trust"
+              items={[
+                { to: "/privacy", label: "Privacy" },
+                { to: "/terms", label: "Terms" },
+              ]}
+            />
           </div>
           <p className="mt-10 border-t border-hairline pt-6 text-xs text-muted">
             Nutrition data: Kenya Food Composition Tables 2018 (FAO / Government of Kenya).
@@ -103,10 +112,18 @@ export function SiteShell({ children }: { children: ReactNode }) {
   );
 }
 
-function FooterCol({ title, items }: { title: string; items: Array<{ to: string; label: string }> }) {
+function FooterCol({
+  title,
+  items,
+}: {
+  title: string;
+  items: Array<{ to: string; label: string }>;
+}) {
   return (
     <div>
-      <h4 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-ink">{title}</h4>
+      <h4 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-ink">
+        {title}
+      </h4>
       <ul className="flex flex-col gap-2">
         {items.map((i) => (
           <li key={i.to}>

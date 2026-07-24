@@ -2,7 +2,9 @@ node_modules
 dist
 .output
 .vinxi
+.vercel
+.kfct-venv
 pnpm-lock.yaml
 package-lock.json
-bun.lock
 routeTree.gen.ts
+scripts/kfct_raw.json

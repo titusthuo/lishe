@@ -59,10 +59,7 @@ function loadStoredMessages(): ChatMessage[] {
 function saveStoredMessages(messages: ChatMessage[]) {
   if (typeof window === "undefined") return;
   try {
-    window.localStorage.setItem(
-      STORAGE_KEY,
-      JSON.stringify(messages.slice(-MAX_STORED_MESSAGES)),
-    );
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(messages.slice(-MAX_STORED_MESSAGES)));
   } catch {
     /* localStorage disabled or full — carry on in memory */
   }
@@ -152,9 +149,9 @@ function Ask() {
 
       {hydrated && messages.length > 0 && (
         <p className="mt-4 text-[11px] text-muted">
-          This conversation is saved only in your browser, so you can come back to it later on
-          this device — it's never stored on our servers. Messages you send are processed by
-          Google's Gemini API to generate each reply.
+          This conversation is saved only in your browser, so you can come back to it later on this
+          device — it's never stored on our servers. Messages you send are processed by Google's
+          Gemini API to generate each reply.
         </p>
       )}
 
@@ -192,8 +189,8 @@ function Ask() {
               </div>
               {m.role === "assistant" && (
                 <p className="max-w-[85%] px-1 text-[11px] leading-snug text-muted">
-                  General nutrition information — not medical advice. For a condition, pregnancy,
-                  or a sick child, check with a doctor or KNDI-registered nutritionist.
+                  General nutrition information — not medical advice. For a condition, pregnancy, or
+                  a sick child, check with a doctor or KNDI-registered nutritionist.
                 </p>
               )}
             </div>

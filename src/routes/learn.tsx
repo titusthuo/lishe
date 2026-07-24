@@ -1,11 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import {
-  LEARN_ARTICLES,
-  LEARN_TOPICS,
-  type LearnArticle,
-  type LearnSource,
-} from "@/data/learn";
+import { LEARN_ARTICLES, LEARN_TOPICS, type LearnArticle, type LearnSource } from "@/data/learn";
 
 export const Route = createFileRoute("/learn")({
   head: () => ({
@@ -129,9 +124,21 @@ function TopicArt({ topic }: { topic: string }) {
       return (
         <svg className={wrap} viewBox="0 0 120 120" aria-hidden>
           {/* Salt shaker */}
-          <path d="M40 32 h28 l4 8 v40 a6 6 0 0 1 -6 6 h-24 a6 6 0 0 1 -6 -6 v-40 z" fill={BRICK_LIGHT} stroke={INK} strokeWidth="2" strokeLinejoin="round" />
+          <path
+            d="M40 32 h28 l4 8 v40 a6 6 0 0 1 -6 6 h-24 a6 6 0 0 1 -6 -6 v-40 z"
+            fill={BRICK_LIGHT}
+            stroke={INK}
+            strokeWidth="2"
+            strokeLinejoin="round"
+          />
           <path d="M40 40 h32" stroke={INK} strokeWidth="2" />
-          <path d="M40 32 h28 l4 8 h-32 z" fill={BRICK} stroke={INK} strokeWidth="2" strokeLinejoin="round" />
+          <path
+            d="M40 32 h28 l4 8 h-32 z"
+            fill={BRICK}
+            stroke={INK}
+            strokeWidth="2"
+            strokeLinejoin="round"
+          />
           <circle cx="48" cy="36" r="1.2" fill={CREAM} />
           <circle cx="54" cy="36" r="1.2" fill={CREAM} />
           <circle cx="60" cy="36" r="1.2" fill={CREAM} />
@@ -140,10 +147,29 @@ function TopicArt({ topic }: { topic: string }) {
           <circle cx="28" cy="102" r="1.5" fill={INK} />
           <circle cx="40" cy="100" r="1.5" fill={INK} />
           {/* Sugar cube */}
-          <rect x="82" y="72" width="18" height="18" fill={CREAM} stroke={INK} strokeWidth="2" rx="2" />
-          <path d="M82 78 h18 M82 84 h18 M88 72 v18 M94 72 v18" stroke={INK} strokeWidth="0.8" opacity="0.4" />
+          <rect
+            x="82"
+            y="72"
+            width="18"
+            height="18"
+            fill={CREAM}
+            stroke={INK}
+            strokeWidth="2"
+            rx="2"
+          />
+          <path
+            d="M82 78 h18 M82 84 h18 M88 72 v18 M94 72 v18"
+            stroke={INK}
+            strokeWidth="0.8"
+            opacity="0.4"
+          />
           {/* Oil droplet */}
-          <path d="M96 34 c-6 8 -8 12 -8 16 a8 8 0 0 0 16 0 c0 -4 -2 -8 -8 -16 z" fill={LEAF_LIGHT} stroke={INK} strokeWidth="2" />
+          <path
+            d="M96 34 c-6 8 -8 12 -8 16 a8 8 0 0 0 16 0 c0 -4 -2 -8 -8 -16 z"
+            fill={LEAF_LIGHT}
+            stroke={INK}
+            strokeWidth="2"
+          />
         </svg>
       );
 
@@ -153,15 +179,40 @@ function TopicArt({ topic }: { topic: string }) {
         <svg className={wrap} viewBox="0 0 120 120" aria-hidden>
           {/* Tomato */}
           <circle cx="38" cy="66" r="22" fill={BRICK} stroke={INK} strokeWidth="2" />
-          <path d="M30 46 q4 -8 8 -6 q4 -2 8 6 q-2 4 -8 4 q-6 0 -8 -4 z" fill={LEAF} stroke={INK} strokeWidth="2" />
+          <path
+            d="M30 46 q4 -8 8 -6 q4 -2 8 6 q-2 4 -8 4 q-6 0 -8 -4 z"
+            fill={LEAF}
+            stroke={INK}
+            strokeWidth="2"
+          />
           <circle cx="30" cy="60" r="2" fill={CREAM} opacity="0.5" />
           {/* Leafy green */}
-          <path d="M78 30 q-14 6 -18 26 q-2 12 8 18 q10 -4 14 -20 q4 -14 -4 -24 z" fill={LEAF} stroke={INK} strokeWidth="2" />
+          <path
+            d="M78 30 q-14 6 -18 26 q-2 12 8 18 q10 -4 14 -20 q4 -14 -4 -24 z"
+            fill={LEAF}
+            stroke={INK}
+            strokeWidth="2"
+          />
           <path d="M76 40 q-6 20 -4 30" stroke={LEAF_LIGHT} strokeWidth="1.8" fill="none" />
-          <path d="M76 40 q-8 4 -10 12 M76 50 q-6 4 -8 10 M76 60 q-4 4 -6 8" stroke={LEAF_LIGHT} strokeWidth="1.2" fill="none" />
+          <path
+            d="M76 40 q-8 4 -10 12 M76 50 q-6 4 -8 10 M76 60 q-4 4 -6 8"
+            stroke={LEAF_LIGHT}
+            strokeWidth="1.2"
+            fill="none"
+          />
           {/* Citrus wedge */}
-          <path d="M100 84 a20 20 0 0 0 -20 -20 L100 84 z" fill={BRICK_LIGHT} stroke={INK} strokeWidth="2" />
-          <path d="M100 84 L92 74 M100 84 L84 78 M100 84 L86 68" stroke={INK} strokeWidth="1" opacity="0.5" />
+          <path
+            d="M100 84 a20 20 0 0 0 -20 -20 L100 84 z"
+            fill={BRICK_LIGHT}
+            stroke={INK}
+            strokeWidth="2"
+          />
+          <path
+            d="M100 84 L92 74 M100 84 L84 78 M100 84 L86 68"
+            stroke={INK}
+            strokeWidth="1"
+            opacity="0.5"
+          />
         </svg>
       );
 
@@ -170,13 +221,28 @@ function TopicArt({ topic }: { topic: string }) {
       return (
         <svg className={wrap} viewBox="0 0 120 120" aria-hidden>
           {/* Leaf */}
-          <path d="M28 92 q-4 -40 32 -60 q40 -18 40 20 q0 40 -40 44 q-24 2 -32 -4 z" fill={LEAF} stroke={INK} strokeWidth="2" />
+          <path
+            d="M28 92 q-4 -40 32 -60 q40 -18 40 20 q0 40 -40 44 q-24 2 -32 -4 z"
+            fill={LEAF}
+            stroke={INK}
+            strokeWidth="2"
+          />
           <path d="M32 88 q28 -32 60 -50" stroke={LEAF_LIGHT} strokeWidth="1.8" fill="none" />
           {/* Sun (vitamin A) */}
           <circle cx="80" cy="46" r="12" fill={BRICK_LIGHT} stroke={INK} strokeWidth="2" />
-          <path d="M80 26 v6 M80 60 v6 M60 46 h6 M94 46 h6 M66 32 l4 4 M90 56 l4 4 M66 60 l4 -4 M90 36 l4 -4" stroke={BRICK} strokeWidth="2" strokeLinecap="round" />
+          <path
+            d="M80 26 v6 M80 60 v6 M60 46 h6 M94 46 h6 M66 32 l4 4 M90 56 l4 4 M66 60 l4 -4 M90 36 l4 -4"
+            stroke={BRICK}
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
           {/* Blood drop (iron) */}
-          <path d="M40 60 c-6 8 -8 12 -8 16 a8 8 0 0 0 16 0 c0 -4 -2 -8 -8 -16 z" fill={BRICK} stroke={INK} strokeWidth="2" />
+          <path
+            d="M40 60 c-6 8 -8 12 -8 16 a8 8 0 0 0 16 0 c0 -4 -2 -8 -8 -16 z"
+            fill={BRICK}
+            stroke={INK}
+            strokeWidth="2"
+          />
           <circle cx="38" cy="72" r="1.6" fill={CREAM} opacity="0.7" />
         </svg>
       );
@@ -186,17 +252,53 @@ function TopicArt({ topic }: { topic: string }) {
       return (
         <svg className={wrap} viewBox="0 0 120 120" aria-hidden>
           {/* Steam */}
-          <path d="M40 24 q-4 8 0 16 q4 8 0 16" stroke={ENAMEL_LIGHT} strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.7" />
-          <path d="M56 20 q-4 8 0 16 q4 8 0 16" stroke={ENAMEL_LIGHT} strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.7" />
-          <path d="M72 24 q-4 8 0 16 q4 8 0 16" stroke={ENAMEL_LIGHT} strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.7" />
+          <path
+            d="M40 24 q-4 8 0 16 q4 8 0 16"
+            stroke={ENAMEL_LIGHT}
+            strokeWidth="2"
+            fill="none"
+            strokeLinecap="round"
+            opacity="0.7"
+          />
+          <path
+            d="M56 20 q-4 8 0 16 q4 8 0 16"
+            stroke={ENAMEL_LIGHT}
+            strokeWidth="2"
+            fill="none"
+            strokeLinecap="round"
+            opacity="0.7"
+          />
+          <path
+            d="M72 24 q-4 8 0 16 q4 8 0 16"
+            stroke={ENAMEL_LIGHT}
+            strokeWidth="2"
+            fill="none"
+            strokeLinecap="round"
+            opacity="0.7"
+          />
           {/* Bowl */}
-          <path d="M18 68 h84 a6 6 0 0 1 -6 22 h-72 a6 6 0 0 1 -6 -22 z" fill={ENAMEL} stroke={INK} strokeWidth="2" strokeLinejoin="round" />
+          <path
+            d="M18 68 h84 a6 6 0 0 1 -6 22 h-72 a6 6 0 0 1 -6 -22 z"
+            fill={ENAMEL}
+            stroke={INK}
+            strokeWidth="2"
+            strokeLinejoin="round"
+          />
           <ellipse cx="60" cy="68" rx="42" ry="6" fill={BRICK_LIGHT} stroke={INK} strokeWidth="2" />
           <circle cx="46" cy="66" r="2" fill={CREAM} />
           <circle cx="60" cy="70" r="2.4" fill={LEAF_LIGHT} />
           <circle cx="72" cy="66" r="1.8" fill={CREAM} />
           {/* Spoon */}
-          <ellipse cx="98" cy="52" rx="6" ry="10" transform="rotate(30 98 52)" fill={CREAM} stroke={INK} strokeWidth="2" />
+          <ellipse
+            cx="98"
+            cy="52"
+            rx="6"
+            ry="10"
+            transform="rotate(30 98 52)"
+            fill={CREAM}
+            stroke={INK}
+            strokeWidth="2"
+          />
           <path d="M104 60 l14 26" stroke={INK} strokeWidth="3" strokeLinecap="round" />
         </svg>
       );
@@ -208,10 +310,22 @@ function TopicArt({ topic }: { topic: string }) {
           {/* Head */}
           <circle cx="52" cy="26" r="10" fill={BRICK_LIGHT} stroke={INK} strokeWidth="2" />
           {/* Torso */}
-          <path d="M40 38 q0 -4 6 -4 h12 q6 0 6 4 q4 14 8 22 q6 12 -4 20 q-4 2 -8 0 q0 12 -2 20 h-16 q-2 -8 -2 -20 q-4 2 -8 0 q-10 -8 -4 -20 q4 -8 8 -22 z" fill={BRICK} stroke={INK} strokeWidth="2" strokeLinejoin="round" />
+          <path
+            d="M40 38 q0 -4 6 -4 h12 q6 0 6 4 q4 14 8 22 q6 12 -4 20 q-4 2 -8 0 q0 12 -2 20 h-16 q-2 -8 -2 -20 q-4 2 -8 0 q-10 -8 -4 -20 q4 -8 8 -22 z"
+            fill={BRICK}
+            stroke={INK}
+            strokeWidth="2"
+            strokeLinejoin="round"
+          />
           {/* Apple in arms */}
           <circle cx="78" cy="66" r="14" fill={LEAF} stroke={INK} strokeWidth="2" />
-          <path d="M78 52 q0 -4 4 -6" stroke={INK} strokeWidth="2" fill="none" strokeLinecap="round" />
+          <path
+            d="M78 52 q0 -4 4 -6"
+            stroke={INK}
+            strokeWidth="2"
+            fill="none"
+            strokeLinecap="round"
+          />
           <path d="M80 50 q6 -4 10 -2" fill={LEAF_LIGHT} stroke={INK} strokeWidth="1.5" />
         </svg>
       );
@@ -221,15 +335,71 @@ function TopicArt({ topic }: { topic: string }) {
       return (
         <svg className={wrap} viewBox="0 0 120 120" aria-hidden>
           {/* House shield */}
-          <path d="M20 60 L60 22 L100 60 V100 H20 Z" fill={ENAMEL} stroke={INK} strokeWidth="2" strokeLinejoin="round" />
-          <path d="M20 60 L60 22 L100 60" fill={ENAMEL_LIGHT} stroke={INK} strokeWidth="2" strokeLinejoin="round" />
+          <path
+            d="M20 60 L60 22 L100 60 V100 H20 Z"
+            fill={ENAMEL}
+            stroke={INK}
+            strokeWidth="2"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M20 60 L60 22 L100 60"
+            fill={ENAMEL_LIGHT}
+            stroke={INK}
+            strokeWidth="2"
+            strokeLinejoin="round"
+          />
           {/* Grain sheaf */}
           <path d="M60 96 v-32" stroke={INK} strokeWidth="3" strokeLinecap="round" />
-          <ellipse cx="60" cy="62" rx="4" ry="8" fill={BRICK_LIGHT} stroke={INK} strokeWidth="1.5" />
-          <ellipse cx="52" cy="66" rx="4" ry="8" transform="rotate(-20 52 66)" fill={BRICK_LIGHT} stroke={INK} strokeWidth="1.5" />
-          <ellipse cx="68" cy="66" rx="4" ry="8" transform="rotate(20 68 66)" fill={BRICK_LIGHT} stroke={INK} strokeWidth="1.5" />
-          <ellipse cx="46" cy="74" rx="4" ry="8" transform="rotate(-30 46 74)" fill={BRICK} stroke={INK} strokeWidth="1.5" />
-          <ellipse cx="74" cy="74" rx="4" ry="8" transform="rotate(30 74 74)" fill={BRICK} stroke={INK} strokeWidth="1.5" />
+          <ellipse
+            cx="60"
+            cy="62"
+            rx="4"
+            ry="8"
+            fill={BRICK_LIGHT}
+            stroke={INK}
+            strokeWidth="1.5"
+          />
+          <ellipse
+            cx="52"
+            cy="66"
+            rx="4"
+            ry="8"
+            transform="rotate(-20 52 66)"
+            fill={BRICK_LIGHT}
+            stroke={INK}
+            strokeWidth="1.5"
+          />
+          <ellipse
+            cx="68"
+            cy="66"
+            rx="4"
+            ry="8"
+            transform="rotate(20 68 66)"
+            fill={BRICK_LIGHT}
+            stroke={INK}
+            strokeWidth="1.5"
+          />
+          <ellipse
+            cx="46"
+            cy="74"
+            rx="4"
+            ry="8"
+            transform="rotate(-30 46 74)"
+            fill={BRICK}
+            stroke={INK}
+            strokeWidth="1.5"
+          />
+          <ellipse
+            cx="74"
+            cy="74"
+            rx="4"
+            ry="8"
+            transform="rotate(30 74 74)"
+            fill={BRICK}
+            stroke={INK}
+            strokeWidth="1.5"
+          />
           {/* Ground */}
           <path d="M20 100 h80" stroke={INK} strokeWidth="2" />
         </svg>
@@ -257,7 +427,7 @@ function Learn() {
     return LEARN_ARTICLES.filter((a) => {
       if (topic && a.topic !== topic) return false;
       if (source && a.source !== source) return false;
-      if (term && !(`${a.title} ${a.summary}`.toLowerCase().includes(term))) return false;
+      if (term && !`${a.title} ${a.summary}`.toLowerCase().includes(term)) return false;
       return true;
     });
   }, [q, topic, source]);
@@ -300,8 +470,13 @@ function Learn() {
         </p>
         <div className="mt-6 space-y-3">
           {PLATE.map((p) => (
-            <div key={p.part} className="flex items-center gap-4 border border-hairline bg-surface p-4">
-              <span className={`num w-28 shrink-0 font-display text-lg font-bold ${p.tone}`}>{p.part}</span>
+            <div
+              key={p.part}
+              className="flex items-center gap-4 border border-hairline bg-surface p-4"
+            >
+              <span className={`num w-28 shrink-0 font-display text-lg font-bold ${p.tone}`}>
+                {p.part}
+              </span>
               <span className="text-ink">{p.what}</span>
             </div>
           ))}
@@ -316,7 +491,9 @@ function Learn() {
         <div className="mt-6 divide-y divide-hairline border border-hairline bg-surface">
           {HOW_OFTEN.map((h) => (
             <div key={h.freq} className="flex flex-col gap-1 p-5 sm:flex-row sm:gap-6">
-              <span className="w-32 shrink-0 font-display text-lg font-bold text-leaf">{h.freq}</span>
+              <span className="w-32 shrink-0 font-display text-lg font-bold text-leaf">
+                {h.freq}
+              </span>
               <span className="text-sm text-muted">{h.what}</span>
             </div>
           ))}
@@ -415,7 +592,9 @@ function Learn() {
       </section>
 
       <div className="mt-16 border border-brick bg-brick-soft p-6 text-brick">
-        <p className="text-base font-semibold">This is nutrition information, not medical advice.</p>
+        <p className="text-base font-semibold">
+          This is nutrition information, not medical advice.
+        </p>
         <p className="mt-2 text-sm">
           If you're pregnant, managing a condition, or feeding a sick child, speak to a doctor or a
           KNDI-registered nutritionist.

@@ -6,8 +6,7 @@ export const Route = createFileRoute("/terms")({
       { title: "Terms — Lishe" },
       {
         name: "description",
-        content:
-          "Terms of use for Lishe. General nutrition information, not medical advice.",
+        content: "Terms of use for Lishe. General nutrition information, not medical advice.",
       },
       { property: "og:title", content: "Terms — Lishe" },
       { property: "og:description", content: "General nutrition information, not medical advice." },
@@ -48,8 +47,8 @@ function Terms() {
           <p className="mt-2 text-muted">
             Nutrient values shown for each food come from the Kenya Food Composition Tables 2018
             (FAO / Government of Kenya). They are per 100 g of the raw edible portion unless the
-            food name says otherwise. Real foods vary by variety, season, and preparation, so
-            treat the numbers as a guide, not a laboratory reading.
+            food name says otherwise. Real foods vary by variety, season, and preparation, so treat
+            the numbers as a guide, not a laboratory reading.
           </p>
         </section>
 
@@ -57,16 +56,16 @@ function Terms() {
           <h2 className="font-display text-xl font-bold">The Ask helper</h2>
           <p className="mt-2 text-muted">
             The helper uses Google's Gemini AI to generate answers. AI can make mistakes. Do not
-            rely on any single response for a health decision — cross-check with the sources on
-            the Learn page or a qualified professional.
+            rely on any single response for a health decision — cross-check with the sources on the
+            Learn page or a qualified professional.
           </p>
         </section>
 
         <section>
           <h2 className="font-display text-xl font-bold">No warranty</h2>
           <p className="mt-2 text-muted">
-            Lishe is provided as-is, without warranty of any kind. To the extent allowed by law,
-            we accept no liability for outcomes arising from your use of the site or the helper.
+            Lishe is provided as-is, without warranty of any kind. To the extent allowed by law, we
+            accept no liability for outcomes arising from your use of the site or the helper.
           </p>
         </section>
 
