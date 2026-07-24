@@ -25,6 +25,12 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# Vercel build output
+.vercel/
+
+# Python venv for KFCT extraction scripts
+.kfct-venv/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

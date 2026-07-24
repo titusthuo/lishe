@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lishe">
+  <title>Lishe — a balanced plate</title>
+  <!-- Cream background disc -->
+  <circle cx="32" cy="32" r="30" fill="#FBFAF8"/>
+  <!-- ½ vegetables & fruit (left half, leaf green) -->
+  <path d="M32 2 A30 30 0 0 0 32 62 Z" fill="#2F5D3A"/>
+  <!-- ¼ staples (top-right quarter, enamel blue) -->
+  <path d="M32 2 A30 30 0 0 1 62 32 L32 32 Z" fill="#1F4E8C"/>
+  <!-- ¼ protein (bottom-right quarter, brick) -->
+  <path d="M62 32 A30 30 0 0 1 32 62 L32 32 Z" fill="#A63D2F"/>
+  <!-- Plate rim -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#181815" stroke-width="3"/>
+  <!-- Dividers -->
+  <line x1="32" y1="2" x2="32" y2="62" stroke="#181815" stroke-width="2"/>
+  <line x1="32" y1="32" x2="62" y2="32" stroke="#181815" stroke-width="2"/>
+  <!-- Centre pip -->
+  <circle cx="32" cy="32" r="4" fill="#FBFAF8" stroke="#181815" stroke-width="2"/>
+</svg>

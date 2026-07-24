@@ -1,29 +1,54 @@
-# Welcome to your Lovable project
+# Lishe
 
-This project was built with [Lovable](https://lovable.dev).
+Nutrition information and a friendly nutrition helper for a Kenyan audience.
+The site teaches the basics of a balanced diet using local foods, lets you
+search the Kenya Food Composition Tables 2018 (over 640 foods), and answers
+your questions through an AI-assisted helper.
 
-## Build with Lovable
+## Getting started
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requires Node.js 20+ and npm.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
 
-## Built with
+The dev server starts on http://localhost:8080.
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## Environment variables
+
+Set these before deploying:
+
+- `GEMINI_API_KEY` — Google AI Studio key. Without it, the Ask page shows a
+  friendly "not configured" message instead of AI answers.
+- `GEMINI_MODEL` (optional) — Gemini model ID. Defaults to `gemini-flash-latest`.
+
+## Build
+
+```sh
+npm run build
+```
+
+The build targets Vercel's Build Output API (see `vite.config.ts` — `nitro({
+preset: "vercel" })`). Output lands in `.vercel/output/`. Deploy with:
+
+```sh
+npx vercel deploy --prebuilt
+```
+
+## Data sources
+
+- Nutrient values: **Kenya Food Composition Tables 2018** (FAO / Government of
+  Kenya).
+- Guidance: **WHO** healthy-diet advice, **Kenya Ministry of Health** food-based
+  dietary guidelines.
+
+Lishe provides general nutrition information, not medical advice.
+
+## Stack
+
+- TanStack Start + TanStack Router
+- React 19, TypeScript, Tailwind CSS 4
+- Nitro (Vercel preset)
+- Google Gemini for the Ask helper

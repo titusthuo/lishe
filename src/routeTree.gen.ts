@@ -12,26 +12,13 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AskRouteImport } from './routes/ask'
-import { Route as BloodPressureRouteImport } from './routes/blood-pressure'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CountiesRouteImport } from './routes/counties'
-import { Route as DiabetesRouteImport } from './routes/diabetes'
-import { Route as EmployersRouteImport } from './routes/employers'
 import { Route as FoodsRouteImport } from './routes/foods'
-import { Route as GuidesRouteImport } from './routes/guides'
-import { Route as HowItWorksRouteImport } from './routes/how-it-works'
-import { Route as IndividualsRouteImport } from './routes/individuals'
 import { Route as LearnRouteImport } from './routes/learn'
-import { Route as MethodologyRouteImport } from './routes/methodology'
-import { Route as PlatesRouteImport } from './routes/plates'
-import { Route as PregnancyRouteImport } from './routes/pregnancy'
-import { Route as PricesRouteImport } from './routes/prices'
 import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as SeasonsRouteImport } from './routes/seasons'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as FoodsIndexRouteImport } from './routes/foods.index'
 import { Route as FoodsCodeRouteImport } from './routes/foods.$code'
-import { Route as PlatesIdRouteImport } from './routes/plates.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -48,29 +35,9 @@ const AskRoute = AskRouteImport.update({
   path: '/ask',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BloodPressureRoute = BloodPressureRouteImport.update({
-  id: '/blood-pressure',
-  path: '/blood-pressure',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CountiesRoute = CountiesRouteImport.update({
-  id: '/counties',
-  path: '/counties',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DiabetesRoute = DiabetesRouteImport.update({
-  id: '/diabetes',
-  path: '/diabetes',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EmployersRoute = EmployersRouteImport.update({
-  id: '/employers',
-  path: '/employers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FoodsRoute = FoodsRouteImport.update({
@@ -78,54 +45,14 @@ const FoodsRoute = FoodsRouteImport.update({
   path: '/foods',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GuidesRoute = GuidesRouteImport.update({
-  id: '/guides',
-  path: '/guides',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HowItWorksRoute = HowItWorksRouteImport.update({
-  id: '/how-it-works',
-  path: '/how-it-works',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const IndividualsRoute = IndividualsRouteImport.update({
-  id: '/individuals',
-  path: '/individuals',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const LearnRoute = LearnRouteImport.update({
   id: '/learn',
   path: '/learn',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MethodologyRoute = MethodologyRouteImport.update({
-  id: '/methodology',
-  path: '/methodology',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlatesRoute = PlatesRouteImport.update({
-  id: '/plates',
-  path: '/plates',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PregnancyRoute = PregnancyRouteImport.update({
-  id: '/pregnancy',
-  path: '/pregnancy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PricesRoute = PricesRouteImport.update({
-  id: '/prices',
-  path: '/prices',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SeasonsRoute = SeasonsRouteImport.update({
-  id: '/seasons',
-  path: '/seasons',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -143,59 +70,28 @@ const FoodsCodeRoute = FoodsCodeRouteImport.update({
   path: '/$code',
   getParentRoute: () => FoodsRoute,
 } as any)
-const PlatesIdRoute = PlatesIdRouteImport.update({
-  id: '/$id',
-  path: '/$id',
-  getParentRoute: () => PlatesRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ask': typeof AskRoute
-  '/blood-pressure': typeof BloodPressureRoute
   '/contact': typeof ContactRoute
-  '/counties': typeof CountiesRoute
-  '/diabetes': typeof DiabetesRoute
-  '/employers': typeof EmployersRoute
   '/foods': typeof FoodsRouteWithChildren
-  '/guides': typeof GuidesRoute
-  '/how-it-works': typeof HowItWorksRoute
-  '/individuals': typeof IndividualsRoute
   '/learn': typeof LearnRoute
-  '/methodology': typeof MethodologyRoute
-  '/plates': typeof PlatesRouteWithChildren
-  '/pregnancy': typeof PregnancyRoute
-  '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
-  '/seasons': typeof SeasonsRoute
   '/terms': typeof TermsRoute
   '/foods/$code': typeof FoodsCodeRoute
-  '/plates/$id': typeof PlatesIdRoute
   '/foods/': typeof FoodsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ask': typeof AskRoute
-  '/blood-pressure': typeof BloodPressureRoute
   '/contact': typeof ContactRoute
-  '/counties': typeof CountiesRoute
-  '/diabetes': typeof DiabetesRoute
-  '/employers': typeof EmployersRoute
-  '/guides': typeof GuidesRoute
-  '/how-it-works': typeof HowItWorksRoute
-  '/individuals': typeof IndividualsRoute
   '/learn': typeof LearnRoute
-  '/methodology': typeof MethodologyRoute
-  '/plates': typeof PlatesRouteWithChildren
-  '/pregnancy': typeof PregnancyRoute
-  '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
-  '/seasons': typeof SeasonsRoute
   '/terms': typeof TermsRoute
   '/foods/$code': typeof FoodsCodeRoute
-  '/plates/$id': typeof PlatesIdRoute
   '/foods': typeof FoodsIndexRoute
 }
 export interface FileRoutesById {
@@ -203,25 +99,12 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ask': typeof AskRoute
-  '/blood-pressure': typeof BloodPressureRoute
   '/contact': typeof ContactRoute
-  '/counties': typeof CountiesRoute
-  '/diabetes': typeof DiabetesRoute
-  '/employers': typeof EmployersRoute
   '/foods': typeof FoodsRouteWithChildren
-  '/guides': typeof GuidesRoute
-  '/how-it-works': typeof HowItWorksRoute
-  '/individuals': typeof IndividualsRoute
   '/learn': typeof LearnRoute
-  '/methodology': typeof MethodologyRoute
-  '/plates': typeof PlatesRouteWithChildren
-  '/pregnancy': typeof PregnancyRoute
-  '/prices': typeof PricesRoute
   '/privacy': typeof PrivacyRoute
-  '/seasons': typeof SeasonsRoute
   '/terms': typeof TermsRoute
   '/foods/$code': typeof FoodsCodeRoute
-  '/plates/$id': typeof PlatesIdRoute
   '/foods/': typeof FoodsIndexRoute
 }
 export interface FileRouteTypes {
@@ -230,74 +113,35 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/ask'
-    | '/blood-pressure'
     | '/contact'
-    | '/counties'
-    | '/diabetes'
-    | '/employers'
     | '/foods'
-    | '/guides'
-    | '/how-it-works'
-    | '/individuals'
     | '/learn'
-    | '/methodology'
-    | '/plates'
-    | '/pregnancy'
-    | '/prices'
     | '/privacy'
-    | '/seasons'
     | '/terms'
     | '/foods/$code'
-    | '/plates/$id'
     | '/foods/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/ask'
-    | '/blood-pressure'
     | '/contact'
-    | '/counties'
-    | '/diabetes'
-    | '/employers'
-    | '/guides'
-    | '/how-it-works'
-    | '/individuals'
     | '/learn'
-    | '/methodology'
-    | '/plates'
-    | '/pregnancy'
-    | '/prices'
     | '/privacy'
-    | '/seasons'
     | '/terms'
     | '/foods/$code'
-    | '/plates/$id'
     | '/foods'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/ask'
-    | '/blood-pressure'
     | '/contact'
-    | '/counties'
-    | '/diabetes'
-    | '/employers'
     | '/foods'
-    | '/guides'
-    | '/how-it-works'
-    | '/individuals'
     | '/learn'
-    | '/methodology'
-    | '/plates'
-    | '/pregnancy'
-    | '/prices'
     | '/privacy'
-    | '/seasons'
     | '/terms'
     | '/foods/$code'
-    | '/plates/$id'
     | '/foods/'
   fileRoutesById: FileRoutesById
 }
@@ -305,22 +149,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AskRoute: typeof AskRoute
-  BloodPressureRoute: typeof BloodPressureRoute
   ContactRoute: typeof ContactRoute
-  CountiesRoute: typeof CountiesRoute
-  DiabetesRoute: typeof DiabetesRoute
-  EmployersRoute: typeof EmployersRoute
   FoodsRoute: typeof FoodsRouteWithChildren
-  GuidesRoute: typeof GuidesRoute
-  HowItWorksRoute: typeof HowItWorksRoute
-  IndividualsRoute: typeof IndividualsRoute
   LearnRoute: typeof LearnRoute
-  MethodologyRoute: typeof MethodologyRoute
-  PlatesRoute: typeof PlatesRouteWithChildren
-  PregnancyRoute: typeof PregnancyRoute
-  PricesRoute: typeof PricesRoute
   PrivacyRoute: typeof PrivacyRoute
-  SeasonsRoute: typeof SeasonsRoute
   TermsRoute: typeof TermsRoute
 }
 
@@ -347,39 +179,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AskRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blood-pressure': {
-      id: '/blood-pressure'
-      path: '/blood-pressure'
-      fullPath: '/blood-pressure'
-      preLoaderRoute: typeof BloodPressureRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/counties': {
-      id: '/counties'
-      path: '/counties'
-      fullPath: '/counties'
-      preLoaderRoute: typeof CountiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/diabetes': {
-      id: '/diabetes'
-      path: '/diabetes'
-      fullPath: '/diabetes'
-      preLoaderRoute: typeof DiabetesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/employers': {
-      id: '/employers'
-      path: '/employers'
-      fullPath: '/employers'
-      preLoaderRoute: typeof EmployersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/foods': {
@@ -389,27 +193,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FoodsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/guides': {
-      id: '/guides'
-      path: '/guides'
-      fullPath: '/guides'
-      preLoaderRoute: typeof GuidesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/how-it-works': {
-      id: '/how-it-works'
-      path: '/how-it-works'
-      fullPath: '/how-it-works'
-      preLoaderRoute: typeof HowItWorksRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/individuals': {
-      id: '/individuals'
-      path: '/individuals'
-      fullPath: '/individuals'
-      preLoaderRoute: typeof IndividualsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/learn': {
       id: '/learn'
       path: '/learn'
@@ -417,46 +200,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LearnRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/methodology': {
-      id: '/methodology'
-      path: '/methodology'
-      fullPath: '/methodology'
-      preLoaderRoute: typeof MethodologyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/plates': {
-      id: '/plates'
-      path: '/plates'
-      fullPath: '/plates'
-      preLoaderRoute: typeof PlatesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pregnancy': {
-      id: '/pregnancy'
-      path: '/pregnancy'
-      fullPath: '/pregnancy'
-      preLoaderRoute: typeof PregnancyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/prices': {
-      id: '/prices'
-      path: '/prices'
-      fullPath: '/prices'
-      preLoaderRoute: typeof PricesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/seasons': {
-      id: '/seasons'
-      path: '/seasons'
-      fullPath: '/seasons'
-      preLoaderRoute: typeof SeasonsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -480,13 +228,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FoodsCodeRouteImport
       parentRoute: typeof FoodsRoute
     }
-    '/plates/$id': {
-      id: '/plates/$id'
-      path: '/$id'
-      fullPath: '/plates/$id'
-      preLoaderRoute: typeof PlatesIdRouteImport
-      parentRoute: typeof PlatesRoute
-    }
   }
 }
 
@@ -502,37 +243,14 @@ const FoodsRouteChildren: FoodsRouteChildren = {
 
 const FoodsRouteWithChildren = FoodsRoute._addFileChildren(FoodsRouteChildren)
 
-interface PlatesRouteChildren {
-  PlatesIdRoute: typeof PlatesIdRoute
-}
-
-const PlatesRouteChildren: PlatesRouteChildren = {
-  PlatesIdRoute: PlatesIdRoute,
-}
-
-const PlatesRouteWithChildren =
-  PlatesRoute._addFileChildren(PlatesRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AskRoute: AskRoute,
-  BloodPressureRoute: BloodPressureRoute,
   ContactRoute: ContactRoute,
-  CountiesRoute: CountiesRoute,
-  DiabetesRoute: DiabetesRoute,
-  EmployersRoute: EmployersRoute,
   FoodsRoute: FoodsRouteWithChildren,
-  GuidesRoute: GuidesRoute,
-  HowItWorksRoute: HowItWorksRoute,
-  IndividualsRoute: IndividualsRoute,
   LearnRoute: LearnRoute,
-  MethodologyRoute: MethodologyRoute,
-  PlatesRoute: PlatesRouteWithChildren,
-  PregnancyRoute: PregnancyRoute,
-  PricesRoute: PricesRoute,
   PrivacyRoute: PrivacyRoute,
-  SeasonsRoute: SeasonsRoute,
   TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport

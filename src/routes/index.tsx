@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { FOODS } from "@/data/foods";
+import { KFCT_FOODS } from "@/data/foodsKfct";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -69,8 +69,8 @@ function Home() {
                 ))}
               </div>
               <p className="mt-6 text-xs text-muted">
-                A common teaching aid based on WHO healthy-diet guidance — a starting point, not a
-                rigid rule.
+                A common teaching aid consistent with WHO healthy-diet guidance — a starting point,
+                not a rigid rule.
               </p>
             </div>
           </div>
@@ -81,8 +81,8 @@ function Home() {
       <section className="border-b border-hairline">
         <div className="mx-auto grid max-w-[1200px] gap-10 px-4 py-16 sm:px-6 md:grid-cols-3">
           {[
-            { n: "76%", label: "of Kenyans cannot afford a healthy diet (FAO SOFI 2024)" },
-            { n: `${FOODS.length}`, label: "local foods with nutrition data from the Kenya Food Composition Tables 2018" },
+            { n: "76.3%", label: "of Kenyans cannot afford a healthy diet (FAO SOFI 2026)" },
+            { n: `${KFCT_FOODS.length}`, label: "local foods with nutrition data from the Kenya Food Composition Tables 2018" },
             { n: "0", label: "accounts required — nothing to sign up for" },
           ].map((s) => (
             <div key={s.label}>
@@ -133,6 +133,40 @@ function Home() {
               <span className="mt-6 text-sm font-semibold text-leaf group-hover:text-ink">{c.cta}</span>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* Why Lishe */}
+      <section className="border-b border-hairline bg-surface">
+        <div className="mx-auto max-w-[1200px] px-4 py-20 sm:px-6">
+          <p className="text-xs uppercase tracking-widest text-leaf">Why Lishe</p>
+          <h2 className="mt-3 max-w-[720px] font-display text-3xl font-extrabold tracking-tight md:text-4xl">
+            Built for the food you actually eat.
+          </h2>
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
+            {[
+              {
+                title: "Kenyan food, not American",
+                body:
+                  "Ugali, githeri, sukuma wiki, terere, mrenda, ndengu, njahi, omena, matoke. Search by the name you know — the site finds the KFCT entry.",
+              },
+              {
+                title: "Real data, cited",
+                body:
+                  "Every nutrient number comes from the Kenya Food Composition Tables 2018 (FAO / Government of Kenya). Every article on Learn links to WHO, FAO, MoH or UNICEF.",
+              },
+              {
+                title: "No accounts, no ads",
+                body:
+                  "Nothing to sign up for. No tracking. Your Ask chat history is saved only in your browser — we never store it on our servers.",
+              },
+            ].map((c) => (
+              <div key={c.title}>
+                <h3 className="font-display text-lg font-bold text-ink">{c.title}</h3>
+                <p className="mt-3 text-sm text-muted">{c.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
