@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Trash2 } from "lucide-react";
 import { askNutrition, type ChatMessage } from "@/data/ai";
+import { Markdown } from "@/components/site/Markdown";
 
 export const Route = createFileRoute("/ask")({
   head: () => ({
@@ -181,13 +182,13 @@ function Ask() {
               className={m.role === "user" ? "flex justify-end" : "flex flex-col items-start gap-1"}
             >
               <div
-                className={`max-w-[85%] whitespace-pre-wrap rounded px-4 py-3 text-sm ${
+                className={`max-w-[85%] rounded px-4 py-3 text-sm ${
                   m.role === "user"
-                    ? "bg-ink text-surface"
+                    ? "whitespace-pre-wrap bg-ink text-surface"
                     : "border border-hairline bg-surface text-ink"
                 }`}
               >
-                {m.content}
+                {m.role === "assistant" ? <Markdown text={m.content} /> : m.content}
               </div>
               {m.role === "assistant" && (
                 <p className="max-w-[85%] px-1 text-[11px] leading-snug text-muted">
