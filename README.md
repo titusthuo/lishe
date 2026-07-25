@@ -22,7 +22,7 @@ Set these before deploying:
 
 - `GEMINI_API_KEY` — Google AI Studio key. Without it, the Ask page shows a
   friendly "not configured" message instead of AI answers.
-- `GEMINI_MODEL` (optional) — Gemini model ID. Defaults to `gemini-flash-latest`.
+- `GEMINI_MODEL` (optional) — Gemini model ID. Defaults to `gemini-3.5-flash`.
 
 ## Build
 

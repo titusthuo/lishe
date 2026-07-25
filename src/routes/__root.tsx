@@ -10,6 +10,7 @@ import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { SiteShell } from "../components/site/Shell";
+import { siteOrigin } from "../lib/site-origin";
 
 function NotFoundComponent() {
   return (
@@ -74,7 +75,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRoute({
-  head: () => ({
+  loader: () => ({ origin: siteOrigin() }),
+  head: ({ loaderData }) => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -92,7 +94,14 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Lishe" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:image", content: `${loaderData?.origin ?? ""}/og.png` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: "Lishe — eat a balanced diet on a Kenyan budget",
+      },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
