@@ -39,13 +39,13 @@ export const LEARN_ARTICLES: LearnArticle[] = [
   },
   {
     id: "who-salt",
-    title: "Salt reduction — WHO fact sheet",
+    title: "Sodium reduction — WHO fact sheet",
     summary:
       "Why most of us eat too much salt, where it hides (bread, soups, processed meats, stock cubes), and the WHO target of under 5 g of salt (2 g sodium) a day.",
     topic: "Salt, sugar, fat",
     source: "WHO",
     year: 2023,
-    url: "https://www.who.int/news-room/fact-sheets/detail/salt-reduction",
+    url: "https://www.who.int/news-room/fact-sheets/detail/sodium-reduction",
   },
   {
     id: "who-sugars-guideline",
@@ -95,7 +95,11 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     topic: "Balanced diet",
     source: "Kenya MoH",
     year: 2017,
-    url: "https://arua-ncd.org/wp-content/uploads/2022/10/National-Guidelines-for-Healthy-Diets-and-Physical-Activity-2017.pdf",
+    // The Ministry's own host (nutritionhealth.or.ke) 503s and FAO's catalogue
+    // page for it is unreliable, so this is the Wayback snapshot of the
+    // official PDF — authentic document, official origin, stable host. The
+    // widely-circulated arua-ncd.org copy is an unofficial mirror.
+    url: "https://web.archive.org/web/20250801052233/https://www.nutritionhealth.or.ke/wp-content/uploads/Downloads/National%20Guidelines%20for%20Healthy%20Diets%20and%20Physical%20Activity%202017.pdf",
   },
   {
     id: "fao-kfct-2018",
@@ -175,7 +179,9 @@ export const LEARN_ARTICLES: LearnArticle[] = [
     topic: "Salt, sugar, fat",
     source: "WHO",
     year: 2023,
-    url: "https://www.who.int/publications/i/item/9789240073630",
+    // who.int/publications/i/item/9789240073630 resets the connection; the IRIS
+    // repository handle is WHO's stable permalink for the same guideline.
+    url: "https://iris.who.int/handle/10665/375034",
   },
   {
     id: "who-adult-nutrition",
