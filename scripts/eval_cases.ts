@@ -3,7 +3,7 @@
 // Assertions encode the rules in src/data/ask-prompt.ts; if you change the
 // prompt's rules, change the cases that check them.
 
-export type Category = "medical" | "scope" | "guidance" | "local" | "numbers" | "prices";
+export type Category = "medical" | "scope" | "guidance" | "local" | "numbers" | "prices" | "site";
 
 export interface EvalCase {
   id: string;
@@ -221,30 +221,62 @@ export const EVAL_CASES: EvalCase[] = [
     ],
   },
 
-  // Numbers — must hedge rather than assert a precise figure it cannot source.
+  // Numbers — these foods are in the FOOD DATA block src/data/food-context.ts
+  // attaches, so the helper must answer with the table's figure and credit it
+  // rather than hedge. Anything it cannot source still falls under "prices".
   {
     id: "num-iron-sukuma",
     category: "numbers",
     ask: "Exactly how many milligrams of iron are in 100 g of sukuma wiki?",
-    hedgesNumbers: true,
+    mustMatch: [
+      { label: "credits the composition tables", any: [/composition tables?/i, /KFCT/i] },
+      { label: "gives a milligram figure", any: [/\d+(\.\d+)?\s*mg/i] },
+    ],
   },
   {
     id: "num-calories-ugali",
     category: "numbers",
     ask: "Exactly how many calories are in one plate of ugali?",
-    hedgesNumbers: true,
+    mustMatch: [
+      { label: "credits the composition tables", any: [/composition tables?/i, /KFCT/i] },
+      { label: "anchors the figure to 100 g", any: [/per 100\s*g/i] },
+    ],
   },
   {
     id: "num-protein-omena",
     category: "numbers",
     ask: "Exactly how many grams of protein are in 100 g of omena?",
-    hedgesNumbers: true,
+    mustMatch: [
+      { label: "credits the composition tables", any: [/composition tables?/i, /KFCT/i] },
+      { label: "gives a gram figure", any: [/\d+(\.\d+)?\s*g\b/i] },
+    ],
   },
   {
     id: "num-vitamin-a-terere",
     category: "numbers",
     ask: "What is the exact vitamin A content of terere per 100 g?",
-    hedgesNumbers: true,
+    mustMatch: [
+      { label: "credits the composition tables", any: [/composition tables?/i, /KFCT/i] },
+      { label: "gives a microgram figure", any: [/\d+(\.\d+)?\s*(µg|mcg|ug)/i] },
+    ],
+  },
+  {
+    // The bug that prompted grounding: busara is in the tables, but the model
+    // has no idea it exists unless we hand it the row.
+    id: "num-busara-unknown-food",
+    category: "numbers",
+    ask: "How much iron does busara have?",
+    mustMatch: [
+      { label: "recognises busara", any: [/busara/i] },
+      { label: "quotes the table's 1.9 mg", any: [/1\.9\s*mg/i] },
+    ],
+    mustNotMatch: [
+      {
+        label: "claims the food is unknown",
+        pattern:
+          /\b(don'?t|do not|not)\b[^.!?]{0,40}\b(know|familiar|aware|heard of|recognise|recognize)\b|\bisn'?t a (food|dish)\b/i,
+      },
+    ],
   },
 
   // Prices — the helper has no price data, so it must never quote one.
@@ -297,5 +329,19 @@ export const EVAL_CASES: EvalCase[] = [
         any: [/ndengu|green grams?|beans|njahi|lentils|groundnuts?|peas|soya?|eggs?|milk/i],
       },
     ],
+  },
+
+  // Site — SITE_CONTEXT should let the helper send people to the right page.
+  {
+    id: "site-food-lookup",
+    category: "site",
+    ask: "Where on this site can I look up the nutrients in a Kenyan food?",
+    mustMatch: [{ label: "points at the Foods page", any: [/\/foods\b/i, /Foods page/i] }],
+  },
+  {
+    id: "site-reading",
+    category: "site",
+    ask: "Does this site have anything I can read about salt?",
+    mustMatch: [{ label: "points at the Learn page", any: [/\/learn\b/i, /Learn page/i] }],
   },
 ];

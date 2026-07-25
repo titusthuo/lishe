@@ -9,6 +9,7 @@
 // Needs GEMINI_API_KEY; the npm script loads it from .env.
 
 import { GENERATION_CONFIG, MODEL, SYSTEM_PROMPT } from "../src/data/ask-prompt.ts";
+import { SITE_CONTEXT, buildFoodContext } from "../src/data/food-context.ts";
 import { EVAL_CASES, type EvalCase } from "./eval_cases.ts";
 
 const CONCURRENCY = 2;
@@ -61,7 +62,11 @@ async function ask(question: string): Promise<{ text: string; finishReason?: str
 
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${key}`;
   const body = JSON.stringify({
-    system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+    system_instruction: {
+      parts: [SYSTEM_PROMPT, SITE_CONTEXT, buildFoodContext([{ role: "user", content: question }])]
+        .filter(Boolean)
+        .map((text) => ({ text })),
+    },
     contents: [{ role: "user", parts: [{ text: question }] }],
     generationConfig: GENERATION_CONFIG,
   });

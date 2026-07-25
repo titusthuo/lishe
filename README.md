@@ -51,4 +51,6 @@ Lishe provides general nutrition information, not medical advice.
 - TanStack Start + TanStack Router
 - React 19, TypeScript, Tailwind CSS 4
 - Nitro (Vercel preset)
-- Google Gemini for the Ask helper
+- Google Gemini for the Ask helper, grounded per request in the site's own KFCT
+  rows by `src/data/food-context.ts` so it answers on Kenyan foods the model has
+  never heard of

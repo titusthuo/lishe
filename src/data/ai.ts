@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { getRequestIP } from "@tanstack/react-start/server";
 import { GENERATION_CONFIG, MODEL, SYSTEM_PROMPT } from "./ask-prompt";
+import { SITE_CONTEXT, buildFoodContext } from "./food-context";
 
 // Runs only on the server, so GEMINI_API_KEY is never shipped to the browser.
 export type ChatRole = "user" | "assistant";
@@ -72,6 +73,12 @@ async function callGemini(messages: ChatMessage[]): Promise<string> {
     parts: [{ text: m.content }],
   }));
 
+  // The model has no knowledge of the Kenya Food Composition Tables, so the
+  // rows for whatever food was asked about are attached to every request.
+  const instructions = [SYSTEM_PROMPT, SITE_CONTEXT, buildFoodContext(messages)]
+    .filter(Boolean)
+    .map((text) => ({ text }));
+
   let res: Response;
   try {
     res = await fetch(
@@ -80,7 +87,7 @@ async function callGemini(messages: ChatMessage[]): Promise<string> {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+          system_instruction: { parts: instructions },
           contents,
           generationConfig: GENERATION_CONFIG,
         }),
