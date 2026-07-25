@@ -9,7 +9,8 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "eval:ask": "node --experimental-strip-types --env-file-if-exists=.env --no-warnings scripts/eval_ask.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
