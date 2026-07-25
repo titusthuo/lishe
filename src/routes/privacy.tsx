@@ -37,10 +37,10 @@ function Privacy() {
             and does not set advertising cookies.
           </p>
           <p className="mt-2 text-muted">
-            Your Ask conversation is kept in your own browser (local storage) so you can come back
-            to it later on the same device. Clearing your browser data, or using the "Clear chat"
-            button on the Ask page, removes it. The stored history is never uploaded to or kept on
-            Lishe's servers — messages you send pass through our server only to generate a reply
+            Your Ask conversations are kept in your own browser (local storage) so you can come back
+            to them later on the same device. Clearing your browser data, or deleting a chat from
+            the list on the Ask page, removes them. The stored history is never uploaded to or kept
+            on Lishe's servers — messages you send pass through our server only to generate a reply
             (see "The Ask helper" below) and are not retained.
           </p>
         </section>
