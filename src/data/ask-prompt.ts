@@ -1,7 +1,14 @@
 // Kept free of server-only imports so scripts/eval_ask.ts can exercise the exact
 // prompt and generation settings that ship, rather than a copy that drifts.
 
-export const MODEL = process.env.GEMINI_MODEL || "gemini-flash-latest";
+// Pinned deliberately. "gemini-flash-latest" is an alias Google repoints without
+// notice, so the model can change under a running deployment and invalidate the
+// eval in scripts/ without anyone touching the code. It currently resolves to
+// gemini-3.6-flash, whose free-tier quota is 20 requests per DAY (confirmed from
+// the API's own 429 body) — that caps the whole site at 20 questions a day.
+// Override with GEMINI_MODEL to move models without a deploy, and re-run
+// `npm run eval:ask` against the new one before you do.
+export const MODEL = process.env.GEMINI_MODEL || "gemini-3.5-flash";
 
 export const GENERATION_CONFIG = {
   temperature: 0.4,
